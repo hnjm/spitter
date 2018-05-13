@@ -1,0 +1,4 @@
+#!/usr/bin/env /usr/bin/sh
+SPIT=`readlink -f "$0"`
+SPIT_PATH=`dirname "$SPIT"`
+java -cp "$SPIT_PATH/*" Spitter "$SPIT_PATH/key"
