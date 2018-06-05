@@ -30,22 +30,11 @@ object ParameterCodec {
     (b >= 'A' && b <= 'Z') || (b >= 'a' && b <= 'z') || (b >= '0' && b <= '9') ||
     b == '-' || b == '.' || b == '_' || b == '~'
 
-  def percentEncode(b: Int): String = {
-    val h = b.toHexString.toUpperCase
-
-    if (h.length == 1)
-      "%0" + h
-    else if (h.length == 2)
-      "%" + h
-    else
-      throw new IllegalArgumentException
-  }
-
   val table: IndexedSeq[String] = 0 to 255 map { b =>
     if (isUnreserved(b))
       b.toChar.toString
     else
-      percentEncode(b)
+      "%%%02X".format(b)
   }
 
   def encodeString(paramStr: String): String = {
