@@ -49,7 +49,7 @@ None.
 
 ----
 
-All of sources, configuration files, README.md and Spitter's JAR is published under WTFPL. Each of other JAR is published under its original licence .
+All of sources, configuration files, README.md and Spitter's JAR is published under WTFPL. Each of other JAR is published under its original licence.
 
 Copyright &copy; 2018 azapen6
 
